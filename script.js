@@ -106,7 +106,7 @@ const showMessage = (message) => {
 function addColorTokey(keyLetter, color){
   const key = document.getElementById(keyLetter);
   key.classList.add(color);
-}const box = document.getElementById('box');
+}
 
 const flipTile = () =>{
   const rowTiles =  document.querySelector('#row_' + currentRow).childNodes;
