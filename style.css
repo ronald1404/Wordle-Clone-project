@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #FFF;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #1b1b1b;
+}
+
+.game-container {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-container {
+  text-align: center;
+  width: 51rem;
+  border-bottom: 1px solid #3a3a3c;
+}
+
+.tile-container {
+  width: 33rem;
+  margin-bottom: 3rem;
+}
+
+.tile-container div {
+  display: flex;
+}
+
+.tile-container .tile {
+  width: 6.2rem;
+  height: 6.2rem;
+  border: 2px solid #3a3a3c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.2rem;
+  font-size: 2rem;
+}
+
+.keyboard-container {
+  width: 55rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.keyboard-container button {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 0.4rem;
+  border: none;
+  background-color: #818384;
+  margin: 0.4rem;
+  font-size: 2rem;
+}
+
+.keyboard-container button:nth-child(28) {
+  width: 7.5rem;
+}
+
+.message-container {
+  height: 30px;
+}
+
+.message-container p {
+  background-color: #818384;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+@keyframes flipping{
+  0%{
+    transform: rotateX(0deg);
+  }
+  50%{
+    transform: rotateX(90deg);
+  }
+  100%{
+    transform: rotateX(0deg);
+  }
+}
+
+.tile.flip{
+  animation: 0.5s linear flipping;
+}
+
+.grey-overlay {
+  background-color: #3a3a3c !important;
+  border:none !important;
+}
+.yellow-overlay {
+  background-color: #b59f3a !important;
+  border:none !important;
+}
+
+.green-overlay {
+  background-color: #538d4e !important;
+  border:none !important;
+}
