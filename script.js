@@ -106,6 +106,7 @@ const showMessage = (message) => {
 const addColorToKey = (keyLetter, color) => {
   const key = document.getElementById("kbd_" + keyLetter)
   key.classList.add(color)
+
 }
 
 //parado em 1:01:17 do video em https://www.youtube.com/watch?v=mpby4HiElek
@@ -139,21 +140,6 @@ const flipTile = () =>{
 
     }, 500 * index)
   })
-  /*
-  rowTiles.forEach((tile, index) =>{
-    const dataLetter = tile.getAttribute('data')
-    setTimeout(() => {
-      tile.classList.add('flip')
-      if(dataLetter == wordle[index]){
-        tile.classList.add('green-overlay');
-        addColorToKey(dataLetter, 'green-overlay');
-      }else if(wordle.includes(dataLetter)){
-        tile.classList.add('yellow-overlay');
-        addColorToKey(dataLetter, 'yellow-overlay');
-      }else{
-        tile.classList.add('grey-overlay');
-        addColorToKey(dataLetter, 'grey-overlay');
-      }
-    }, 500 * index);
-  })*/
 }
+
+
