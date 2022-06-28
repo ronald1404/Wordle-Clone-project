@@ -103,25 +103,57 @@ const showMessage = (message) => {
   setTimeout(() => messageDisplay.removeChild(messageElement), 2000)
 }
 
-function addColorTokey(keyLetter, color){
-  const key = document.getElementById(keyLetter);
-  key.classList.add(color);
-}const box = document.getElementById('box');
+const addColorToKey = (keyLetter, color) => {
+  const key = document.getElementById("kbd_" + keyLetter)
+  key.classList.add(color)
+}
 
+//parado em 1:01:17 do video em https://www.youtube.com/watch?v=mpby4HiElek
 const flipTile = () =>{
   const rowTiles =  document.querySelector('#row_' + currentRow).childNodes;
+  let checkWordle = wordle;
+  const guess = [];
+
+  rowTiles.forEach(tile =>{
+    guess.push({letter: tile.getAttribute('data'), color: 'grey-overlay'})
+  })
+
+  guess.forEach((guess, index) => {
+    if (guess.letter== wordle[index]){
+      guess.color = 'green-overlay'
+      checkWordle = checkWordle.replace(guess.letter, '')
+    }
+  })
+
+  guess.forEach(guess =>{
+    if(checkWordle.includes(guess.letter)){
+      guess.color = 'yellow-overlay';
+      checkWordle = checkWordle.replace(guess.letter, '');
+    }
+  })
+  rowTiles.forEach((tile, index) =>{
+    setTimeout(()=>{
+      tile.classList.add('flip')
+      tile.classList.add(guess[index].color);
+      addColorToKey(guess[index].letter, guess[index].color)
+
+    }, 500 * index)
+  })
+  /*
   rowTiles.forEach((tile, index) =>{
     const dataLetter = tile.getAttribute('data')
     setTimeout(() => {
       tile.classList.add('flip')
       if(dataLetter == wordle[index]){
         tile.classList.add('green-overlay');
-        addColorTokey(dataLetter, 'green-overlay');
+        addColorToKey(dataLetter, 'green-overlay');
       }else if(wordle.includes(dataLetter)){
         tile.classList.add('yellow-overlay');
+        addColorToKey(dataLetter, 'yellow-overlay');
       }else{
         tile.classList.add('grey-overlay');
+        addColorToKey(dataLetter, 'grey-overlay');
       }
     }, 500 * index);
-  })
+  })*/
 }
