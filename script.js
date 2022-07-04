@@ -1,7 +1,7 @@
 const tileDisplay = document.querySelector('.tile-container');
 const keyboard = document.querySelector('.keyboard-container');
 const messageDisplay = document.querySelector('.message-container');
-const wordle = 'SUPER';
+const wordle = "SUPER";
 let isGameOver;
 const keys = [
   'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P',
@@ -10,7 +10,7 @@ const keys = [
 ]
 
 const guessRows = [
-  ['', '', '', '', ''],
+  ['', '', '', '', ''],000
   ['', '', '', '', ''],
   ['', '', '', '', ''],
   ['', '', '', '', ''],
@@ -109,7 +109,7 @@ const addColorToKey = (keyLetter, color) => {
 
 }
 
-//parado em 1:01:17 do video em https://www.youtube.com/watch?v=mpby4HiElek
+
 const flipTile = () =>{
   const rowTiles =  document.querySelector('#row_' + currentRow).childNodes;
   let checkWordle = wordle;
@@ -141,5 +141,3 @@ const flipTile = () =>{
     }, 500 * index)
   })
 }
-
-
